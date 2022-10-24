@@ -25,5 +25,11 @@ body::-webkit-scrollbar {
     border-radius: 5px;
 }
 
+li,ol,ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
 
 `;

@@ -1,4 +1,5 @@
 import { RiCloseCircleLine } from "react-icons/ri";
+import { TodoLi } from "./styles";
 import { IInputData } from "../TodoList";
 
 interface IPropsTodo {
@@ -11,7 +12,7 @@ const Todo = ({ listTodo, completeListTodo, removeListTodo }: IPropsTodo) => {
   return (
     <ul>
       {listTodo.map((elem, index) => (
-        <li key={index}>
+        <TodoLi key={index}>
           <div
             className={elem.isComplete ? "list_row complete" : "list_row"}
             key={index}
@@ -26,7 +27,7 @@ const Todo = ({ listTodo, completeListTodo, removeListTodo }: IPropsTodo) => {
               />
             </div>
           </div>
-        </li>
+        </TodoLi>
       ))}
     </ul>
   );
