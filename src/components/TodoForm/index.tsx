@@ -1,4 +1,5 @@
 import { FormEvent, useState } from "react";
+import { Form } from "./styles";
 import { IInputData } from "../TodoList";
 
 interface IPropsToDoForm {
@@ -21,7 +22,7 @@ const ToDoForm = ({ onSubmit }: IPropsToDoForm) => {
     setInput("");
   };
   return (
-    <form onSubmit={handleSubmit}>
+    <Form onSubmit={handleSubmit}>
       <input
         className="input_todo-form"
         type="text"
@@ -33,7 +34,7 @@ const ToDoForm = ({ onSubmit }: IPropsToDoForm) => {
       <button type="submit" className="button_todo-form">
         Add
       </button>
-    </form>
+    </Form>
   );
 };
 export default ToDoForm;

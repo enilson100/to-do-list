@@ -1,17 +1,13 @@
-import { useState } from "react";
-import ToDoForm from "../TodoForm";
 import { RiCloseCircleLine } from "react-icons/ri";
 import { IInputData } from "../TodoList";
-import { TiEdit } from "react-icons/ti";
 
 interface IPropsTodo {
   listTodo: IInputData[];
   completeListTodo: (id: number) => void;
+  removeListTodo: (id: number) => void;
 }
 
-const Todo = ({ listTodo, completeListTodo }: IPropsTodo) => {
-  const [edit, setEdit] = useState({ id: null, value: "" });
-
+const Todo = ({ listTodo, completeListTodo, removeListTodo }: IPropsTodo) => {
   return (
     <ul>
       {listTodo.map((elem, index) => (
@@ -24,8 +20,10 @@ const Todo = ({ listTodo, completeListTodo }: IPropsTodo) => {
               <p>{elem.text}</p>
             </div>
             <div className="list_icons">
-              <RiCloseCircleLine />
-              <TiEdit />
+              <RiCloseCircleLine
+                onClick={() => removeListTodo(elem.id)}
+                className="delete-icon"
+              />
             </div>
           </div>
         </li>

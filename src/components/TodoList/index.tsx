@@ -1,6 +1,7 @@
 import ToDoForm from "../TodoForm";
 import Todo from "../Todo";
 import { useState } from "react";
+import { DivList } from "./styles";
 
 export interface IInputData {
   id: number;
@@ -28,13 +29,22 @@ const TodoList = () => {
     });
     setList(updatedList);
   };
+  const removeList = (id: number) => {
+    const removedArr = list.filter((todo) => todo.id !== id);
+
+    setList(removedArr);
+  };
 
   return (
-    <div>
+    <DivList>
       <h1>What's the Plan for Today?</h1>
       <ToDoForm onSubmit={addTodo} />
-      <Todo listTodo={list} completeListTodo={completeList} />
-    </div>
+      <Todo
+        listTodo={list}
+        completeListTodo={completeList}
+        removeListTodo={removeList}
+      />
+    </DivList>
   );
 };
 export default TodoList;

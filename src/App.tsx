@@ -1,10 +1,12 @@
 import TodoList from "./components/TodoList";
+import Global from "./styles/Global";
 
 function App() {
   return (
-    <div>
+    <>
+      <Global />
       <TodoList />
-    </div>
+    </>
   );
 }
 
