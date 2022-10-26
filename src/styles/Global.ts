@@ -15,6 +15,11 @@ body {
     rgba(48, 16, 255, 1) 0%,
     rgba(100, 115, 255, 1) 100%
   );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
 }
 body::-webkit-scrollbar {
     border: none;

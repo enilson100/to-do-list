@@ -18,9 +18,9 @@ export const TodoLi = styled.li`
       rgba(255, 84, 17, 1) 100%
     );
 
-    padding: 16px;
+    padding: 10px;
     border-radius: 5px;
-    width: 90%;
+    width: 83%;
   }
 
   .list_icons {

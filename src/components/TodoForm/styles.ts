@@ -8,7 +8,7 @@ export const Form = styled.form`
     border-radius: 4px 0 0 4px;
     border: 2px solid #5d0cff;
     outline: none;
-    width: 320px;
+    width: 70%;
     background: transparent;
     color: #fff;
   }
