@@ -25,12 +25,12 @@ body::-webkit-scrollbar {
     border: none;
     width: 8px;
 }
-  body::-webkit-scrollbar-thumb {
+body::-webkit-scrollbar-thumb {
     background-color: black;
     border-radius: 5px;
 }
 
-li,ol,ul{
+li,ol,ul,div{
   list-style: none;
   padding: 0;
   margin: 0;

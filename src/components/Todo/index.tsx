@@ -1,6 +1,7 @@
-import { RiCloseCircleLine } from "react-icons/ri";
-import { TodoLi } from "./styles";
+import { FaTrash } from "react-icons/fa";
+import { TodoLi, UlTodo } from "./styles";
 import { IInputData } from "../TodoList";
+import { MdCheckBoxOutlineBlank, MdCheckBox } from "react-icons/md";
 
 interface IPropsTodo {
   listTodo: IInputData[];
@@ -10,18 +11,23 @@ interface IPropsTodo {
 
 const Todo = ({ listTodo, completeListTodo, removeListTodo }: IPropsTodo) => {
   return (
-    <ul>
+    <UlTodo>
       {listTodo.map((elem, index) => (
         <TodoLi key={index}>
           <div
             className={elem.isComplete ? "list_row complete" : "list_row"}
             key={index}
           >
-            <div key={elem.id} onClick={() => completeListTodo(elem.id)}>
+            <div>
               <p>{elem.text}</p>
             </div>
+
             <div className="list_icons">
-              <RiCloseCircleLine
+              <div onClick={() => completeListTodo(elem.id)}>
+                {elem.isComplete ? <MdCheckBox /> : <MdCheckBoxOutlineBlank />}
+              </div>
+
+              <FaTrash
                 onClick={() => removeListTodo(elem.id)}
                 className="delete-icon"
               />
@@ -29,7 +35,7 @@ const Todo = ({ listTodo, completeListTodo, removeListTodo }: IPropsTodo) => {
           </div>
         </TodoLi>
       ))}
-    </ul>
+    </UlTodo>
   );
 };
 
